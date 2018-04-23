@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>testForjunyi</title>
+
+    <script type="text/javascript">
+    </script>  
+    <script language="javascript">
+    </script> 
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
+    <script> 
+    $(function ()  {
+        console.log("1");
+        console.log(revString("hello"));
+        console.log(senRevString("hello world"));
+        console.log("2");
+        console.log(methodCount());
+        console.log(methodCount().length);
+
+    });
+    /*反轉字串*/
+    function revString(str) { 
+        return str.split("").reverse().join(""); 
+    } 
+
+    /*句子循環反轉*/
+    function senRevString(str){
+
+        var _str_ary = str.split(" ");
+
+        var _view_str = "";
+        for(var i in _str_ary){
+            var _rec_str = revString(_str_ary[i]);
+            if(i == 0){
+                _view_str += _rec_str;
+            }else{
+                _view_str += " " + _rec_str;
+            }
+        }
+        return _view_str;
+    }
+
+    /*循環算數條件*/
+    function methodCount(){
+        var _input = 55; //輸入數值
+        var _view_ary = [];
+        for(var a = 1; a <= _input; a++){
+            //console.log("整數:"+a +"除:"+a/3 +"餘數:"+a%3);
+            if(((a%3) == 0)&&((a%5) == 0)){
+                //console.log(a);
+                _view_ary.push(a);
+            }else if((a%5) == 0){
+
+            }else if((a%3) == 0){
+                
+            }else{
+                _view_ary.push(a);
+            }
+        }
+        return _view_ary;
+    }
+
+
+    </script> 
+    </head>
+    <body >            
+  </body>
+</html>
